@@ -142,13 +142,13 @@ var Background = enchant.Class.create(enchant.Sprite,{
 	initialize: function(){
 	enchant.Sprite.call(this, 320,640 );
 	this.x = 0; 
-	this.y = 0;
+	this.y = -320;
     this.image = game.assets['bg.png'];
 	this.addEventListener('enterframe', function(){
 		//ひたすらスクロール
 	    this.y++;
 	    //端まで来たら巻き戻す
-	    if(this.y<=-320)this.y=0;
+if(this.y >= -1 ){this.y= -320;}
 	    });
 	game.rootScene.addChild(this);
 	}
